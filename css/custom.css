@@ -2,16 +2,28 @@ body {
   background: #FBFBF8;
   font-family: "Poppins", sans-serif;
 }
-body p {
+
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 38px;
+  line-height: 50px;
+  color: #C39F72;
+}
+
+p {
   color: #777777;
 }
-body header {
+
+header.home {
   background-image: url("../images/top-background.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: center;
 }
-body .navbar .nav-link {
+
+.navbar .nav-link {
   color: #242424;
   font-style: normal;
   font-weight: 300;
@@ -20,26 +32,36 @@ body .navbar .nav-link {
   text-transform: uppercase;
   margin: 10px 20px;
 }
-body .cta {
+.navbar .nav-link.active {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  color: #005B6F;
+}
+
+.cta {
   background: #EDEAE3;
   color: #242424;
   border-top: 2px solid #C39F72;
   border-bottom: 2px solid #C39F72;
 }
-body .cta .cta-bg {
+.cta .cta-bg {
   background-image: url("../images/cta-image.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: right;
 }
-body .providers-section {
+
+.providers-section {
   padding: 30px 0px;
 }
-body .providers-section img {
+.providers-section img {
   padding: 10px 30px;
   mix-blend-mode: luminosity;
 }
-body button.btn.btn-primary {
+
+button.btn.btn-primary {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -54,7 +76,8 @@ body button.btn.btn-primary {
   order: 1;
   flex-grow: 0;
 }
-body button.btn.btn-primary.green {
+
+button.btn.btn-primary.green {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -69,7 +92,8 @@ body button.btn.btn-primary.green {
   order: 1;
   flex-grow: 0;
 }
-body button.btn.btn-secondary {
+
+button.btn.btn-secondary {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -85,7 +109,8 @@ body button.btn.btn-secondary {
   flex-grow: 0;
   margin: 20px 0px;
 }
-body footer {
+
+footer {
   background: #F9EADC;
   color: #005B6F;
   padding: 60px 0px;
@@ -99,22 +124,50 @@ body footer {
   background-position-x: 75%;
   background-position-y: 200px;
 }
-body footer p {
+footer p {
   color: #005B6F;
 }
-body footer .footer-logo {
+footer .footer-logo {
   position: relative;
   top: 25%;
 }
-body footer h3 {
+footer h3 {
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
 }
-body footer ul li {
+footer ul li {
   font-weight: 300;
   font-size: 14px;
   line-height: 21px;
+}
+
+.team-section {
+  max-width: 960px;
+}
+.team-section .col {
+  padding: 40px;
+}
+.team-section .card {
+  border: none;
+  background: none;
+}
+.team-section .card .card-img-top {
+  border-radius: 50%;
+}
+.team-section .card .card-title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  color: #242424;
+}
+.team-section .card .card-text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+  color: #C39F72;
 }
 
 /*# sourceMappingURL=custom.css.map */
