@@ -11,9 +11,192 @@ $peach-color: #F9EADC;
 $darkpeach-color: #F3D1AD;
 $intext-grey-color: #777777;
 
+body.contact, body.classes {
+  background-color: $lightrose-color;
+
+  h2{
+    color: $darkrose-color;
+  }
+
+  h3{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 30px;
+    color: $darkrose-color;
+  }
+
+  h3.class-title{
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 37px;
+  }
+
+  h3.time-table-heading{
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 37px;
+  }
+
+  p{
+    color: $darkgrey-color;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  a{
+    color: $darkgrey-color;
+    text-decoration: none;
+  }
+
+  button.btn.btn-secondary{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
+  
+    border: 1px solid $darkrose-color;
+    box-sizing: border-box;
+    border-radius: 30px;
+    color: $darkrose-color;
+    background: none;
+  
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 20px 0px;
+  }
+
+  table{
+    > :not(:first-child){
+      border-top: 10px solid rgba(130, 91, 43, 0.2);;
+    }
+
+    th{
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+    }
+  
+    td{
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 21px;
+  
+      a{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        color: $link-color;
+        text-decoration: underline;
+        text-transform: capitalize;
+      }
+    }
+
+    td.class-teacher{
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+}
+
+body.classes{
+  .container a{
+    color: $darkrose-color;
+    text-decoration: underline;
+  }
+}
+
+body.services {
+  background-color: $sand-color;
+
+  h2{
+    color: $green-color;
+  }
+
+  h3{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 30px;
+    color: $green-color;
+  }
+
+  h3.class-title{
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 37px;
+  }
+
+  h3.time-table-heading{
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 37px;
+  }
+
+  p{
+    color: $darkgrey-color;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  a{
+    color: $darkgrey-color;
+    text-decoration: none;
+  }
+
+  table{
+    > :not(:first-child){
+      border-top: 10px solid rgba(130, 91, 43, 0.2);;
+    }
+
+    th{
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+    }
+  
+    td{
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 21px;
+  
+      a{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        color: $link-color;
+        text-decoration: underline;
+        text-transform: capitalize;
+      }
+    }
+
+    td.class-teacher{
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+
+  .right-image-rounded {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    border-top-left-radius: 250px;
+    border-bottom-left-radius: 250px;
+  }
+}
+
+
 body{
   background: $offwhite-color;
   font-family: 'Poppins', sans-serif;
+}
+
+h1 img {
+  padding: 25px;
 }
 
 h2{
@@ -23,10 +206,15 @@ h2{
   font-size: 38px;
   line-height: 50px;
   color: $gold-color;
+  margin-bottom: 30px;
 }
 
 p{
   color: $intext-grey-color;
+}
+
+ol, ul {
+  padding-left: 7rem;
 }
 
 header.home{
@@ -36,7 +224,7 @@ header.home{
   background-position-x: center;
 }
 
-.navbar{
+.navbar.navbar-light{
   .nav-link{
     color: $darkgrey-color;
     font-style: normal;
@@ -54,6 +242,14 @@ header.home{
     line-height: 27px;
     color: $link-color;
   }
+
+  .navbar-toggler{
+    border: none;
+  }
+
+  .navbar-toggler-icon{
+    background-image: url("../images/menu-toggle.svg");
+  }
 }
 
 .cta{
@@ -67,6 +263,63 @@ header.home{
     background-size: contain;
     background-repeat: no-repeat;
     background-position-x: right;
+  }
+}
+
+.contact-img-banner{
+  background: $sand-color;
+  color: $darkgrey-color;
+  border-top: 2px solid $gold-color;
+  border-bottom: 2px solid $gold-color;
+  min-height: 600px;
+
+  background-image: url("../images/contact-image.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: right;
+
+  .img-right-mask {
+    position: absolute;
+    left: -32%;
+    height: 596px;
+  }
+}
+
+.classes-img-banner{
+  background: $sand-color;
+  color: $darkgrey-color;
+  border-top: 2px solid $gold-color;
+  border-bottom: 2px solid $gold-color;
+  min-height: 600px;
+
+  background-image: url("../images/class-image.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: right;
+
+  .img-right-mask {
+    position: absolute;
+    left: -32%;
+    height: 596px;
+  }
+}
+
+.services-img-banner{
+  background: $sand-color;
+  color: $darkgrey-color;
+  border-top: 2px solid $gold-color;
+  border-bottom: 2px solid $gold-color;
+  min-height: 600px;
+
+  background-image: url("../images/services-image.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: left;
+
+  .img-left-mask {
+    position: absolute;
+    right: -27%;
+    height: 596px;
   }
 }
 
@@ -205,4 +458,25 @@ footer{
 
 
   }
+}
+
+.contact-information{
+  max-width: 960px;
+
+  margin-top: 70px;
+  margin-bottom: 70px;
+
+}
+
+
+.dropdown-toggle::after {
+  background-image: url("../images/chevron-down.svg");
+  border: none;
+  width: 9px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-y: 8px;
+  top: 1px;
+  position: relative;
 }

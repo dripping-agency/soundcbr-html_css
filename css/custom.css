@@ -1,6 +1,156 @@
+body.contact, body.classes {
+  background-color: #F1E7E6;
+}
+body.contact h2, body.classes h2 {
+  color: #C7A4A0;
+}
+body.contact h3, body.classes h3 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+  color: #C7A4A0;
+}
+body.contact h3.class-title, body.classes h3.class-title {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 37px;
+}
+body.contact h3.time-table-heading, body.classes h3.time-table-heading {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 37px;
+}
+body.contact p, body.classes p {
+  color: #242424;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+}
+body.contact a, body.classes a {
+  color: #242424;
+  text-decoration: none;
+}
+body.contact button.btn.btn-secondary, body.classes button.btn.btn-secondary {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px;
+  border: 1px solid #C7A4A0;
+  box-sizing: border-box;
+  border-radius: 30px;
+  color: #C7A4A0;
+  background: none;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 20px 0px;
+}
+body.contact table > :not(:first-child), body.classes table > :not(:first-child) {
+  border-top: 10px solid rgba(130, 91, 43, 0.2);
+}
+body.contact table th, body.classes table th {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+}
+body.contact table td, body.classes table td {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+}
+body.contact table td a, body.classes table td a {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #005B6F;
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+body.contact table td.class-teacher, body.classes table td.class-teacher {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+body.classes .container a {
+  color: #C7A4A0;
+  text-decoration: underline;
+}
+
+body.services {
+  background-color: #EDEAE3;
+}
+body.services h2 {
+  color: #3F4B0F;
+}
+body.services h3 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+  color: #3F4B0F;
+}
+body.services h3.class-title {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 37px;
+}
+body.services h3.time-table-heading {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 37px;
+}
+body.services p {
+  color: #242424;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+}
+body.services a {
+  color: #242424;
+  text-decoration: none;
+}
+body.services table > :not(:first-child) {
+  border-top: 10px solid rgba(130, 91, 43, 0.2);
+}
+body.services table th {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+}
+body.services table td {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+}
+body.services table td a {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #005B6F;
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+body.services table td.class-teacher {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+}
+body.services .right-image-rounded {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  border-top-left-radius: 250px;
+  border-bottom-left-radius: 250px;
+}
+
 body {
   background: #FBFBF8;
   font-family: "Poppins", sans-serif;
+}
+
+h1 img {
+  padding: 25px;
 }
 
 h2 {
@@ -10,10 +160,15 @@ h2 {
   font-size: 38px;
   line-height: 50px;
   color: #C39F72;
+  margin-bottom: 30px;
 }
 
 p {
   color: #777777;
+}
+
+ol, ul {
+  padding-left: 7rem;
 }
 
 header.home {
@@ -23,7 +178,7 @@ header.home {
   background-position-x: center;
 }
 
-.navbar .nav-link {
+.navbar.navbar-light .nav-link {
   color: #242424;
   font-style: normal;
   font-weight: 300;
@@ -32,12 +187,18 @@ header.home {
   text-transform: uppercase;
   margin: 10px 20px;
 }
-.navbar .nav-link.active {
+.navbar.navbar-light .nav-link.active {
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 27px;
   color: #005B6F;
+}
+.navbar.navbar-light .navbar-toggler {
+  border: none;
+}
+.navbar.navbar-light .navbar-toggler-icon {
+  background-image: url("../images/menu-toggle.svg");
 }
 
 .cta {
@@ -51,6 +212,57 @@ header.home {
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: right;
+}
+
+.contact-img-banner {
+  background: #EDEAE3;
+  color: #242424;
+  border-top: 2px solid #C39F72;
+  border-bottom: 2px solid #C39F72;
+  min-height: 600px;
+  background-image: url("../images/contact-image.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: right;
+}
+.contact-img-banner .img-right-mask {
+  position: absolute;
+  left: -32%;
+  height: 596px;
+}
+
+.classes-img-banner {
+  background: #EDEAE3;
+  color: #242424;
+  border-top: 2px solid #C39F72;
+  border-bottom: 2px solid #C39F72;
+  min-height: 600px;
+  background-image: url("../images/class-image.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: right;
+}
+.classes-img-banner .img-right-mask {
+  position: absolute;
+  left: -32%;
+  height: 596px;
+}
+
+.services-img-banner {
+  background: #EDEAE3;
+  color: #242424;
+  border-top: 2px solid #C39F72;
+  border-bottom: 2px solid #C39F72;
+  min-height: 600px;
+  background-image: url("../images/services-image.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: left;
+}
+.services-img-banner .img-left-mask {
+  position: absolute;
+  right: -27%;
+  height: 596px;
 }
 
 .providers-section {
@@ -168,6 +380,24 @@ footer ul li {
   font-size: 16px;
   line-height: 30px;
   color: #C39F72;
+}
+
+.contact-information {
+  max-width: 960px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.dropdown-toggle::after {
+  background-image: url("../images/chevron-down.svg");
+  border: none;
+  width: 9px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-y: 8px;
+  top: 1px;
+  position: relative;
 }
 
 /*# sourceMappingURL=custom.css.map */
