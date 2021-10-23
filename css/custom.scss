@@ -10,6 +10,7 @@ $gold-color: #C39F72;
 $peach-color: #F9EADC;
 $darkpeach-color: #F3D1AD;
 $intext-grey-color: #777777;
+$dropdown-color: #DCD6C7;
 
 body.contact, body.classes {
   background-color: $lightrose-color;
@@ -54,7 +55,7 @@ body.contact, body.classes {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10px 30px;
+    padding: 8px 10px;
   
     border: 1px solid $darkrose-color;
     box-sizing: border-box;
@@ -180,12 +181,13 @@ body.services {
     }
   }
 
-  .right-image-rounded {
+  .image-rounded-right{
     position: absolute;
     right: 0px;
     top: 50%;
     border-top-left-radius: 250px;
     border-bottom-left-radius: 250px;
+    overflow: hidden;
   }
 }
 
@@ -213,6 +215,10 @@ p{
   color: $intext-grey-color;
 }
 
+a{
+  color: $link-color;
+}
+
 ol, ul {
   padding-left: 7rem;
 }
@@ -222,6 +228,13 @@ header.home{
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: center;
+}
+
+.dropdown-menu.show{
+  background-color: $dropdown-color;
+  color: $darkgrey-color;
+  border: none;
+  padding: 30px;
 }
 
 .navbar.navbar-light{
@@ -315,6 +328,8 @@ header.home{
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: left;
+  overflow: hidden;
+  position: relative;
 
   .img-left-mask {
     position: absolute;
@@ -337,7 +352,7 @@ button.btn.btn-primary{
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 10px 30px;
+  padding: 8px 10px;
 
   border: 1px solid $darkrose-color;
   box-sizing: border-box;
@@ -355,7 +370,7 @@ button.btn.btn-primary.green{
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 10px 30px;
+  padding: 8px 10px;
 
   border: 1px solid $link-color;
   box-sizing: border-box;
@@ -373,9 +388,9 @@ button.btn.btn-secondary{
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 10px 30px;
+  padding: 8px 10px;
 
-  border: 1px solid #3F4B0F;
+  border: 1px solid $green-color;
   box-sizing: border-box;
   border-radius: 30px;
   color: $green-color;
@@ -385,6 +400,11 @@ button.btn.btn-secondary{
   order: 1;
   flex-grow: 0;
   margin: 20px 0px;
+}
+
+button.btn.btn-secondary:hover{
+  background-color: $green-color;
+  color: #fff;
 }
 
 footer{
@@ -417,10 +437,23 @@ footer{
     line-height: 24px;
   }
 
-  ul li{
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 21px;
+  ul{
+    padding-left: 0rem;
+    list-style: none;
+
+    li{
+      background-image: url('../images/bullet-point.svg');
+      background-repeat: no-repeat;
+      background-position-y: 0.6rem;
+      padding-left: 1rem;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 21px;
+    }
+
+    li::marker{
+      margin-top: 5px;
+    }
   }
   
 }
@@ -460,6 +493,25 @@ footer{
   }
 }
 
+.team-detail{
+  max-width: 960px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+
+  h3{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .team-title{
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    color: $gold-color;
+  }
+}
+
 .contact-information{
   max-width: 960px;
 
@@ -479,4 +531,21 @@ footer{
   background-position-y: 8px;
   top: 1px;
   position: relative;
+}
+
+
+@media (max-width: 767px) { 
+  body{
+    background: #fff;
+  }
+
+  header{
+    background-image: url("../images/mobile-top-background.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  footer{
+    background-position-y: bottom;
+  }
 }

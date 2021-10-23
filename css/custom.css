@@ -35,7 +35,7 @@ body.contact button.btn.btn-secondary, body.classes button.btn.btn-secondary {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 10px 30px;
+  padding: 8px 10px;
   border: 1px solid #C7A4A0;
   box-sizing: border-box;
   border-radius: 30px;
@@ -136,12 +136,13 @@ body.services table td.class-teacher {
   font-size: 14px;
   line-height: 21px;
 }
-body.services .right-image-rounded {
+body.services .image-rounded-right {
   position: absolute;
   right: 0px;
   top: 50%;
   border-top-left-radius: 250px;
   border-bottom-left-radius: 250px;
+  overflow: hidden;
 }
 
 body {
@@ -167,6 +168,10 @@ p {
   color: #777777;
 }
 
+a {
+  color: #005B6F;
+}
+
 ol, ul {
   padding-left: 7rem;
 }
@@ -176,6 +181,13 @@ header.home {
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: center;
+}
+
+.dropdown-menu.show {
+  background-color: #DCD6C7;
+  color: #242424;
+  border: none;
+  padding: 30px;
 }
 
 .navbar.navbar-light .nav-link {
@@ -258,6 +270,8 @@ header.home {
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: left;
+  overflow: hidden;
+  position: relative;
 }
 .services-img-banner .img-left-mask {
   position: absolute;
@@ -278,7 +292,7 @@ button.btn.btn-primary {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 10px 30px;
+  padding: 8px 10px;
   border: 1px solid #C7A4A0;
   box-sizing: border-box;
   border-radius: 30px;
@@ -294,7 +308,7 @@ button.btn.btn-primary.green {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 10px 30px;
+  padding: 8px 10px;
   border: 1px solid #005B6F;
   box-sizing: border-box;
   border-radius: 30px;
@@ -310,7 +324,7 @@ button.btn.btn-secondary {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 10px 30px;
+  padding: 8px 10px;
   border: 1px solid #3F4B0F;
   box-sizing: border-box;
   border-radius: 30px;
@@ -320,6 +334,11 @@ button.btn.btn-secondary {
   order: 1;
   flex-grow: 0;
   margin: 20px 0px;
+}
+
+button.btn.btn-secondary:hover {
+  background-color: #3F4B0F;
+  color: #fff;
 }
 
 footer {
@@ -348,10 +367,21 @@ footer h3 {
   font-size: 16px;
   line-height: 24px;
 }
+footer ul {
+  padding-left: 0rem;
+  list-style: none;
+}
 footer ul li {
+  background-image: url("../images/bullet-point.svg");
+  background-repeat: no-repeat;
+  background-position-y: 0.6rem;
+  padding-left: 1rem;
   font-weight: 300;
   font-size: 14px;
   line-height: 21px;
+}
+footer ul li::marker {
+  margin-top: 5px;
 }
 
 .team-section {
@@ -382,6 +412,23 @@ footer ul li {
   color: #C39F72;
 }
 
+.team-detail {
+  max-width: 960px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+.team-detail h3 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+}
+.team-detail .team-title {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  color: #C39F72;
+}
+
 .contact-information {
   max-width: 960px;
   margin-top: 70px;
@@ -398,6 +445,22 @@ footer ul li {
   background-position-y: 8px;
   top: 1px;
   position: relative;
+}
+
+@media (max-width: 767px) {
+  body {
+    background: #fff;
+  }
+
+  header {
+    background-image: url("../images/mobile-top-background.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  footer {
+    background-position-y: bottom;
+  }
 }
 
 /*# sourceMappingURL=custom.css.map */

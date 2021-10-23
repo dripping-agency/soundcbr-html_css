@@ -18,31 +18,38 @@
 <body>
     <header class="home">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
+            <div class="container-fluid justify-content-end">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse col-md-10 offset-md-2" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto">
-                        <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Services</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                        </li>
                         <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Classes
+                        <a class="nav-link dropdown-toggle" href="services.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="#">Physiotherapy</a></li>
+                            <li><a class="dropdown-item" href="#">Pilates Assessment</a></li>
+                            <li><a class="dropdown-item" href="#">Women’s Health Physiotherapy</a></li>
+                            <li><a class="dropdown-item" href="#">Pyschology</a></li>
                         </ul>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link" href="about-us.html">About Us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="yoga.html" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Classes
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <li><a class="dropdown-item" href="#">YOGA type a</a></li>
+                            <li><a class="dropdown-item" href="#">Pilates type a</a></li>
+                            <li><a class="dropdown-item" href="#">Postnatal pilates</a></li>
+                        </ul>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="contact-us.html">Contact Us</a>
                         </li>
                     </ul>
                     <button class="btn btn-primary">Book Services</button>
@@ -86,7 +93,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="images/footer-logo.svg" class="footer-logo">
+                    <img src="images/footer-logo.svg" class="footer-logo d-none d-md-block">
                 </div>
                 <div class="col-md-4">
                     <h3>Location</h3>
@@ -95,12 +102,16 @@
                     <h3>Phone</h3>
                     <p><a href="">02 6123 4567</a></p>
 
+                    <button class="btn btn-secondary d-sm-block d-md-none">Book now</button>
+
                     <a href="" class="social-link"><img src="images/fb-icon.svg"></a>
                     <a href="" class="social-link px-3"><img src="images/inst-icon.svg"></a>
 
+                    <img src="images/footer-logo.svg" class="d-block d-sm-block d-md-none mt-4">
+
                     <p class="mt-5">© 2021 Sound CBR Pty Ltd All rights reserved</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 d-none d-md-block">
                     <nav>
                         <ul>
                             <li>Services</li>
