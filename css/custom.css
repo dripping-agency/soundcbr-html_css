@@ -49,6 +49,9 @@ body.contact button.btn.btn-secondary, body.classes button.btn.btn-secondary {
 body.contact table > :not(:first-child), body.classes table > :not(:first-child) {
   border-top: 10px solid rgba(130, 91, 43, 0.2);
 }
+body.contact table :not(caption) > * > *, body.classes table :not(caption) > * > * {
+  border-bottom: none;
+}
 body.contact table th, body.classes table th {
   font-weight: 500;
   font-size: 18px;
@@ -190,6 +193,12 @@ header.home {
   padding: 30px;
 }
 
+.dropdown-item:focus {
+  background: #DCD6C7;
+  color: #242424;
+  font-weight: 500;
+}
+
 .navbar.navbar-light .nav-link {
   color: #242424;
   font-style: normal;
@@ -303,6 +312,11 @@ button.btn.btn-primary {
   flex-grow: 0;
 }
 
+button.btn.btn-primary:hover {
+  background: none;
+  color: #C7A4A0;
+}
+
 button.btn.btn-primary.green {
   display: flex;
   flex-direction: row;
@@ -317,6 +331,11 @@ button.btn.btn-primary.green {
   flex: none;
   order: 1;
   flex-grow: 0;
+}
+
+button.btn.btn-primary.green:hover {
+  background: none;
+  color: #005B6F;
 }
 
 button.btn.btn-secondary {
@@ -363,6 +382,7 @@ footer .footer-logo {
   top: 25%;
 }
 footer h3 {
+  color: #005B6F;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;

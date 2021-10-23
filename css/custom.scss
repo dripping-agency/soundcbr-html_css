@@ -74,6 +74,10 @@ body.contact, body.classes {
       border-top: 10px solid rgba(130, 91, 43, 0.2);;
     }
 
+    :not(caption) > * > *{
+      border-bottom: none;
+    }
+
     th{
       font-weight: 500;
       font-size: 18px;
@@ -101,6 +105,7 @@ body.contact, body.classes {
       line-height: 21px;
     }
   }
+
 }
 
 body.classes{
@@ -237,6 +242,12 @@ header.home{
   padding: 30px;
 }
 
+.dropdown-item:focus{
+  background:$dropdown-color;
+  color: $darkgrey-color;
+  font-weight: 500;
+}
+
 .navbar.navbar-light{
   .nav-link{
     color: $darkgrey-color;
@@ -365,6 +376,11 @@ button.btn.btn-primary{
   flex-grow: 0;
 }
 
+button.btn.btn-primary:hover{
+  background: none;
+  color: $darkrose-color;
+}
+
 button.btn.btn-primary.green{
   display: flex;
   flex-direction: row;
@@ -381,6 +397,11 @@ button.btn.btn-primary.green{
   flex: none;
   order: 1;
   flex-grow: 0;
+}
+
+button.btn.btn-primary.green:hover{
+  background: none;
+  color: $link-color;
 }
 
 button.btn.btn-secondary{
@@ -432,6 +453,7 @@ footer{
   }
 
   h3{
+    color:$link-color;
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
