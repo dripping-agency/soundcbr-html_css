@@ -76,6 +76,18 @@ body.contact table td.class-teacher, body.classes table td.class-teacher {
   line-height: 21px;
 }
 
+img.portfolio-rectangle1 {
+  position: relative;
+  top: -352px;
+  left: -8px;
+}
+
+img.portfolio-rectangle2 {
+  position: relative;
+  top: -729px;
+  left: 0px;
+}
+
 body.classes .container a {
   color: #C7A4A0;
   text-decoration: underline;
@@ -147,6 +159,11 @@ body.services .image-rounded-right {
   border-bottom-left-radius: 250px;
   overflow: hidden;
 }
+@media (max-width: 991px) {
+  body.services .image-rounded-right {
+    display: none;
+  }
+}
 
 body {
   background: #FBFBF8;
@@ -173,6 +190,7 @@ p {
 
 a {
   color: #005B6F;
+  text-decoration: none;
 }
 
 ol, ul {
@@ -481,6 +499,32 @@ footer ul li::marker {
   footer {
     background-position-y: bottom;
   }
+}
+.image-stack {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.image-stack__item--bottom {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.image-stack__item--top {
+  grid-row: 1;
+  grid-column: 1;
+  margin-left: -5%;
+  margin-top: -5%;
+  z-index: 1;
+}
+
+.image-stack__item--top-2 {
+  grid-row: 1;
+  grid-column: 1;
+  margin-left: 0%;
+  margin-top: -2%;
+  z-index: 2;
 }
 
 /*# sourceMappingURL=custom.css.map */

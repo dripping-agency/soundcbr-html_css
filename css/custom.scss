@@ -108,6 +108,18 @@ body.contact, body.classes {
 
 }
 
+img.portfolio-rectangle1 {
+  position: relative;
+  top: -352px;
+  left: -8px;
+}
+
+img.portfolio-rectangle2 {
+  position: relative;
+  top: -729px;
+  left: 0px;
+}
+
 body.classes{
   .container a{
     color: $darkrose-color;
@@ -194,6 +206,12 @@ body.services {
     border-bottom-left-radius: 250px;
     overflow: hidden;
   }
+
+  @media (max-width: 991px) { 
+    .image-rounded-right{
+      display: none;
+    }
+  }
 }
 
 
@@ -222,6 +240,7 @@ p{
 
 a{
   color: $link-color;
+  text-decoration: none;
 }
 
 ol, ul {
@@ -570,4 +589,34 @@ footer{
   footer{
     background-position-y: bottom;
   }
+}
+
+
+
+// Relevant styles
+.image-stack {
+  display: grid;
+  position: relative; // imperative for the overlapping to work
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.image-stack__item--bottom {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.image-stack__item--top {
+  grid-row: 1;
+  grid-column: 1;
+  margin-left: -5%;
+  margin-top: -5%;
+  z-index: 1;
+}
+
+.image-stack__item--top-2 {
+  grid-row: 1;
+  grid-column: 1;
+  margin-left: 0%;
+  margin-top: -2%;
+  z-index: 2;
 }
