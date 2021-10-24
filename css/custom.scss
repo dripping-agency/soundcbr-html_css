@@ -254,11 +254,17 @@ header.home{
   background-position-x: center;
 }
 
-.dropdown-menu.show{
+.dropdown-menu{
   background-color: $dropdown-color;
   color: $darkgrey-color;
   border: none;
   padding: 30px;
+}
+
+.dropdown-item:hover{
+  background:none;
+  color: $darkgrey-color;
+  font-weight: 500;
 }
 
 .dropdown-item:focus{
@@ -591,12 +597,9 @@ footer{
   }
 }
 
-
-
-// Relevant styles
 .image-stack {
   display: grid;
-  position: relative; // imperative for the overlapping to work
+  position: relative;
   grid-template-columns: repeat(12, 1fr);
 }
 
@@ -620,3 +623,9 @@ footer{
   margin-top: -2%;
   z-index: 2;
 }
+
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}	

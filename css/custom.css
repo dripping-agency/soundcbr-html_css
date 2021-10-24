@@ -204,11 +204,17 @@ header.home {
   background-position-x: center;
 }
 
-.dropdown-menu.show {
+.dropdown-menu {
   background-color: #DCD6C7;
   color: #242424;
   border: none;
   padding: 30px;
+}
+
+.dropdown-item:hover {
+  background: none;
+  color: #242424;
+  font-weight: 500;
 }
 
 .dropdown-item:focus {
@@ -525,6 +531,20 @@ footer ul li::marker {
   margin-left: 0%;
   margin-top: -2%;
   z-index: 2;
+}
+
+@media all and (min-width: 992px) {
+  .navbar .nav-item .dropdown-menu {
+    display: none;
+  }
+
+  .navbar .nav-item:hover .dropdown-menu {
+    display: block;
+  }
+
+  .navbar .nav-item .dropdown-menu {
+    margin-top: 0;
+  }
 }
 
 /*# sourceMappingURL=custom.css.map */
