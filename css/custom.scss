@@ -129,6 +129,7 @@ body.classes{
 
 body.services {
   background-color: $sand-color;
+  overflow-x: clip;
 
   h2{
     color: $green-color;
@@ -323,13 +324,13 @@ header.home{
   min-height: 600px;
 
   background-image: url("../images/contact-image.png");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position-x: right;
 
   .img-right-mask {
     position: absolute;
-    left: -32%;
+    left: -50%;
     height: 596px;
   }
 }
@@ -342,13 +343,13 @@ header.home{
   min-height: 600px;
 
   background-image: url("../images/class-image.png");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position-x: right;
 
   .img-right-mask {
     position: absolute;
-    left: -32%;
+    left: -50%;
     height: 596px;
   }
 }
@@ -361,7 +362,7 @@ header.home{
   min-height: 600px;
 
   background-image: url("../images/services-image.png");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position-x: left;
   overflow: hidden;
@@ -369,7 +370,7 @@ header.home{
 
   .img-left-mask {
     position: absolute;
-    right: -27%;
+    right: -40%;
     height: 596px;
   }
 }
@@ -580,21 +581,30 @@ footer{
   position: relative;
 }
 
+.img-top-mask{
+  width: 100%;
+}
 
-@media (max-width: 767px) { 
-  body{
-    background: #fff;
-  }
+.contact-img-banner-mobile{
+  background-image: url("../images/contact-image-mobile.png");
+  background-size: cover;
+}
 
-  header{
-    background-image: url("../images/mobile-top-background.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
+.classes-img-banner-mobile{
+  background-image: url("../images/services-image.png");
+  background-position-x: 66%;
+  background-size: cover;
+}
 
-  footer{
-    background-position-y: bottom;
-  }
+.services-img-banner-mobile{
+  background-image: url("../images/services-image.png");
+  background-position-x: 66%;
+  background-size: cover;
+}
+
+.index-img-banner-mobile{
+  background-image: url("../images/homepage-cta-background.png");
+  background-size: cover;
 }
 
 .image-stack {
@@ -623,6 +633,73 @@ footer{
   margin-top: -2%;
   z-index: 2;
 }
+
+/* Media Queries */
+
+@media (max-width: 1700px) { 
+  body.services .image-rounded-right {
+    position: absolute;
+    left: 1400px;
+    right: inherit;
+  }
+
+}
+
+@media (min-width: 768px){
+  .contact-img-banner-mobile{
+    display: none;
+  }  
+
+  .classes-img-banner-mobile{
+    display: none;
+  }
+
+  .services-img-banner-mobile{
+    display: none;
+  }
+
+  .index-img-banner-mobile{
+    display: none;
+  }
+}
+
+@media (max-width: 767px) { 
+  body{
+    background: #fff;
+  }  
+
+  header{
+    background-image: url("../images/mobile-top-background.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  body.contact, body.classes{
+    header{
+      background-image: url("../images/mobile-top-background2.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }  
+  }
+
+  footer{
+    background-position-y: bottom;
+  }
+
+  .contact-img-banner{
+    display: none;
+  }
+
+  .classes-img-banner{
+    display: none;
+  }
+
+  .services-img-banner{
+    display: none;
+  }
+}
+
+
 
 @media all and (min-width: 992px) {
 	.navbar .nav-item .dropdown-menu{ display: none; }

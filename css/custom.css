@@ -95,6 +95,7 @@ body.classes .container a {
 
 body.services {
   background-color: #EDEAE3;
+  overflow-x: clip;
 }
 body.services h2 {
   color: #3F4B0F;
@@ -266,13 +267,13 @@ header.home {
   border-bottom: 2px solid #C39F72;
   min-height: 600px;
   background-image: url("../images/contact-image.png");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position-x: right;
 }
 .contact-img-banner .img-right-mask {
   position: absolute;
-  left: -32%;
+  left: -50%;
   height: 596px;
 }
 
@@ -283,13 +284,13 @@ header.home {
   border-bottom: 2px solid #C39F72;
   min-height: 600px;
   background-image: url("../images/class-image.png");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position-x: right;
 }
 .classes-img-banner .img-right-mask {
   position: absolute;
-  left: -32%;
+  left: -50%;
   height: 596px;
 }
 
@@ -300,7 +301,7 @@ header.home {
   border-bottom: 2px solid #C39F72;
   min-height: 600px;
   background-image: url("../images/services-image.png");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position-x: left;
   overflow: hidden;
@@ -308,7 +309,7 @@ header.home {
 }
 .services-img-banner .img-left-mask {
   position: absolute;
-  right: -27%;
+  right: -40%;
   height: 596px;
 }
 
@@ -491,21 +492,32 @@ footer ul li::marker {
   position: relative;
 }
 
-@media (max-width: 767px) {
-  body {
-    background: #fff;
-  }
-
-  header {
-    background-image: url("../images/mobile-top-background.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-
-  footer {
-    background-position-y: bottom;
-  }
+.img-top-mask {
+  width: 100%;
 }
+
+.contact-img-banner-mobile {
+  background-image: url("../images/contact-image-mobile.png");
+  background-size: cover;
+}
+
+.classes-img-banner-mobile {
+  background-image: url("../images/services-image.png");
+  background-position-x: 66%;
+  background-size: cover;
+}
+
+.services-img-banner-mobile {
+  background-image: url("../images/services-image.png");
+  background-position-x: 66%;
+  background-size: cover;
+}
+
+.index-img-banner-mobile {
+  background-image: url("../images/homepage-cta-background.png");
+  background-size: cover;
+}
+
 .image-stack {
   display: grid;
   position: relative;
@@ -533,6 +545,64 @@ footer ul li::marker {
   z-index: 2;
 }
 
+/* Media Queries */
+@media (max-width: 1700px) {
+  body.services .image-rounded-right {
+    position: absolute;
+    left: 1400px;
+    right: inherit;
+  }
+}
+@media (min-width: 768px) {
+  .contact-img-banner-mobile {
+    display: none;
+  }
+
+  .classes-img-banner-mobile {
+    display: none;
+  }
+
+  .services-img-banner-mobile {
+    display: none;
+  }
+
+  .index-img-banner-mobile {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  body {
+    background: #fff;
+  }
+
+  header {
+    background-image: url("../images/mobile-top-background.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  body.contact header, body.classes header {
+    background-image: url("../images/mobile-top-background2.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  footer {
+    background-position-y: bottom;
+  }
+
+  .contact-img-banner {
+    display: none;
+  }
+
+  .classes-img-banner {
+    display: none;
+  }
+
+  .services-img-banner {
+    display: none;
+  }
+}
 @media all and (min-width: 992px) {
   .navbar .nav-item .dropdown-menu {
     display: none;
