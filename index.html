@@ -12,6 +12,52 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/custom.css">
+  <script type="text/javascript" src="js/paper.js"></script>
+  <script type="text/javascript">
+
+    paper.install(window);
+    window.onload = function() {
+        paper.setup('canvas-1');
+        var path = new Path();
+        var points = 8;
+        var width, height, center;
+        var smooth = true;
+
+        path.fillColor = '#EDEAE3';
+        path.strokeColor = '#C7A4A0';
+        path.strokeWidth = 0;
+
+        center = view.center;
+        console.log(center);
+        width = view.size.width;
+        height = view.size.height / 2;
+        path.segments = [];
+        path.add(view.bounds.bottomLeft);
+        for (var i = 1; i < points; i++) {
+            var point = new Point(width / points * i, center.y);
+            path.add(point);
+        }
+        path.add(view.bounds.bottomRight);
+        path.fullySelected = false;
+        path.position.y = 450;
+        path.position.x = 0;
+        path.rotate(90);
+
+        view.onFrame = function(event) {
+            for (var i = 1; i < points; i++) {
+                var sinSeed = (event.count/2) + (i + i % 10) * 200;
+                var sinHeight = Math.sin(sinSeed / 100) * 300;
+                var xPos = ((Math.sin(sinSeed / 100) * sinHeight + 300));
+                path.segments[i].point.x = xPos;
+            }
+            
+            path.smooth({ type: 'continuous' });
+
+            console.log(event.delta);
+
+        }
+    }
+  </script>
 
 </head>
 
@@ -75,6 +121,9 @@
                     <button class="btn btn-secondary">Available classes</button>
                 </div>
                 <div class="col-xxl-7 cta-bg">
+                    <div class="canvas">
+                        <canvas resize="true" id="canvas-1" style="user-select: none;" data-paper-scope="1" class="" width="1000" height="1000"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
