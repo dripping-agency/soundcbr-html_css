@@ -17,24 +17,37 @@
 
     paper.install(window);
     window.onload = function() {
+        //set up canvas 1
         paper.setup('canvas-1');
         var path = new Path();
+        var path2 = new Path();
+        var path3 = new Path();
         var points = 8;
         var width, height, center;
-        var smooth = true;
 
         path.fillColor = '#EDEAE3';
         path.strokeColor = '#C7A4A0';
         path.strokeWidth = 0;
 
+        path2.fillColor = null;
+        path2.strokeColor = '#C7A4A0';
+        path2.strokeWidth = 1;
+
+        path3.fillColor = null;
+        path3.strokeColor = '#C7A4A0';
+        path3.strokeWidth = 1;
+
         center = view.center;
-        console.log(center);
         width = view.size.width;
         height = view.size.height / 2;
+
         path.segments = [];
         path.add(view.bounds.bottomLeft);
         for (var i = 1; i < points; i++) {
-            var point = new Point(width / points * i, center.y);
+            var sinSeed = (1/2) + (i + i % 12) * 200;
+            var sinHeight = Math.sin(sinSeed / 100) * 300;
+            var xPos = ((Math.sin(sinSeed / 100) * sinHeight + 300));
+            var point = new Point(width / points * i, xPos-400);
             path.add(point);
         }
         path.add(view.bounds.bottomRight);
@@ -43,18 +56,137 @@
         path.position.x = 0;
         path.rotate(90);
 
-        view.onFrame = function(event) {
-            for (var i = 1; i < points; i++) {
-                var sinSeed = (event.count/2) + (i + i % 10) * 200;
-                var sinHeight = Math.sin(sinSeed / 100) * 300;
-                var xPos = ((Math.sin(sinSeed / 100) * sinHeight + 300));
-                path.segments[i].point.x = xPos;
-            }
-            
+        path2.segments = [];
+        path2.add(view.bounds.bottomLeft);
+        for (var i = 1; i < points; i++) {
+            var point = new Point(width / points * i, center.y);
+            path2.add(point);
+        }
+        path2.add(view.bounds.bottomRight);
+        path2.fullySelected = false;
+        path2.position.y = 450;
+        path2.position.x = 0;
+        path2.rotate(90);
+
+        path3.segments = [];
+        path3.add(view.bounds.bottomLeft);
+        for (var i = 1; i < points; i++) {
+            var point = new Point(width / points * i, center.y);
+            path3.add(point);
+        }
+        path3.add(view.bounds.bottomRight);
+        path3.fullySelected = false;
+        path3.position.y = 450;
+        path3.position.x = 0;
+        path3.rotate(90);
+
+        //set up canvas 2
+        paper.setup('canvas-2');
+        var footerPath = new Path();
+        var footerPath2 = new Path();
+        var footerPath3 = new Path();
+        var points = 8;
+        var width, height, center;
+
+        footerPath.fillColor = '#F3D1AD';
+        footerPath.strokeColor = '#F3D1AD';
+        footerPath.strokeWidth = 0;
+
+        footerPath2.fillColor = null;
+        footerPath2.strokeColor = '#F3D1AD';
+        footerPath2.strokeWidth = 1;
+
+        footerPath3.fillColor = null;
+        footerPath3.strokeColor = '#F3D1AD';
+        footerPath3.strokeWidth = 1;
+
+        center = view.center;
+        width = view.size.width;
+        height = view.size.height / 2;
+
+        footerPath.segments = [];
+        footerPath.add(view.bounds.bottomLeft);
+        for (var i = 1; i < points; i++) {
+            var sinSeed = (350) + (i + i % 12) * 200;
+            var sinHeight = Math.sin(sinSeed / 100) * 100;
+            var xPos = ((Math.sin(sinSeed / 100) * sinHeight + 700));
+            var point = new Point(width / points * i, xPos-400);
+            footerPath.add(point);
+        }
+        footerPath.add(view.bounds.bottomRight);
+        footerPath.fullySelected = false;
+        footerPath.position.y = 500;
+        footerPath.position.x = 600;
+
+        footerPath2.segments = [];
+        footerPath2.add(view.bounds.bottomLeft);
+        for (var i = 1; i < points; i++) {
+            var point = new Point(width / points * i, center.y);
+            footerPath2.add(point);
+        }
+        footerPath2.add(view.bounds.bottomRight);
+        footerPath2.fullySelected = false;
+        footerPath2.position.y = 500;
+        footerPath2.position.x = 600;
+
+        footerPath3.segments = [];
+        footerPath3.add(view.bounds.bottomLeft);
+        for (var i = 1; i < points; i++) {
+            var point = new Point(width / points * i, center.y);
+            footerPath3.add(point);
+        }
+        footerPath3.add(view.bounds.bottomRight);
+        footerPath3.fullySelected = false;
+        footerPath3.position.y = 500;
+        footerPath3.position.x = 600;
+
+
+        view.onFrame = function(event) {            
             path.smooth({ type: 'continuous' });
 
-            console.log(event.delta);
+            for (var i = 1; i < points; i++) {
+                var sinSeed = (event.count/2) + (i + i % 12) * 200;
+                var sinHeight = Math.sin(sinSeed / 100) * 300;
+                var xPos = ((Math.sin(sinSeed / 100) * sinHeight + 300));
+                path2.segments[i].point.x = xPos;
+            }
+            
+            path2.smooth({ type: 'continuous' });
 
+            for (var i = 1; i < points; i++) {
+                var sinSeed = ((event.count+100)/2) + (i + i % 7) * 200;
+                var sinHeight = Math.sin(sinSeed / 90) * 300;
+                var xPos = ((Math.sin(sinSeed / 100) * sinHeight + 350));
+                path3.segments[i].point.x = xPos;
+            }
+            
+            path3.smooth({ type: 'continuous' });
+
+
+            footerPath.smooth({ type: 'continuous' });
+
+            for (var i = 1; i < points; i++) {
+                var sinSeed = ((event.count+20)/2) + (i + i % 12) * 200;
+                var sinHeight = Math.sin(sinSeed / 100) * 100;
+                var yPos = ((Math.sin(sinSeed / 100) * sinHeight + 700));
+                footerPath2.segments[i].point.y = yPos-320;
+            }
+
+            // var sinSeed = (350) + (i + i % 12) * 200;
+            // var sinHeight = Math.sin(sinSeed / 100) * 100;
+            // var xPos = ((Math.sin(sinSeed / 100) * sinHeight + 700));
+            // var point = new Point(width / points * i, xPos-400);
+            
+            footerPath2.smooth({ type: 'continuous' });
+
+            for (var i = 1; i < points; i++) {
+                var sinSeed = (event.count/2) + (i + i % 12) * 200;
+                var sinHeight = Math.sin(sinSeed / 100) * 100;
+                var yPos = ((Math.sin(sinSeed / 100) * sinHeight + 700));
+                footerPath3.segments[i].point.y = yPos-300;
+            }
+
+            footerPath3.smooth({ type: 'continuous' });
         }
     }
   </script>
@@ -177,6 +309,10 @@
                     <button class="btn btn-primary green">Book now</button>
                 </div>
             </div>
+        </div>
+
+        <div class="canvas">
+            <canvas resize="true" id="canvas-2" style="user-select: none;" data-paper-scope="1" class="" width="1000" height="1000"></canvas>
         </div>
     </footer>
   <script src="js/bootstrap.min.js"></script>

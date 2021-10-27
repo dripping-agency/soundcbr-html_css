@@ -394,12 +394,7 @@ footer {
   font-weight: 300;
   font-size: 14px;
   line-height: 21px;
-  background-image: url("../images/footer-background.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-x: 75%;
-  background-position-y: 200px;
+  position: relative;
 }
 footer p {
   color: #005B6F;
@@ -556,6 +551,24 @@ footer ul li::marker {
 .cta canvas {
   width: 1000px;
   height: 100%;
+}
+
+footer .container {
+  position: relative;
+  z-index: 1;
+}
+footer .canvas {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  z-index: 0;
+}
+footer canvas {
+  width: 1200px;
+  height: 500px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
 }
 
 /* Media Queries */
