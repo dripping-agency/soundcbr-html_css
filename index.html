@@ -17,6 +17,68 @@
 
     paper.install(window);
     window.onload = function() {
+
+        //set up canvas 2
+        paper.setup('canvas-2');
+        var footerPath = new Path();
+        var footerPath2 = new Path();
+        var footerPath3 = new Path();
+        var points = 8;
+        var width, height, center;
+
+        footerPath.fillColor = '#F3D1AD';
+        footerPath.strokeColor = '#F3D1AD';
+        footerPath.strokeWidth = 0;
+
+        footerPath2.fillColor = null;
+        footerPath2.strokeColor = '#F3D1AD';
+        footerPath2.strokeWidth = 1;
+
+        footerPath3.fillColor = null;
+        footerPath3.strokeColor = '#F3D1AD';
+        footerPath3.strokeWidth = 1;
+
+        center = view.center;
+        width = view.size.width;
+        height = view.size.height / 2;
+
+        footerPath.segments = [];
+        footerPath.add(view.bounds.bottomLeft);
+        for (var i = 1; i < points; i++) {
+            var sinSeed = (350) + (i + i % 12) * 200;
+            var sinHeight = Math.sin(sinSeed / 100) * 100;
+            var xPos = ((Math.sin(sinSeed / 100) * sinHeight + 700));
+            var point = new Point(width / points * i, xPos-400);
+            footerPath.add(point);
+        }
+        footerPath.add(view.bounds.bottomRight);
+        footerPath.fullySelected = false;
+        footerPath.position.y = 500;
+        footerPath.position.x = 600;
+
+        footerPath2.segments = [];
+        footerPath2.add(view.bounds.bottomLeft);
+        for (var i = 1; i < points; i++) {
+            var point = new Point(width / points * i, center.y);
+            footerPath2.add(point);
+        }
+        footerPath2.add(view.bounds.bottomRight);
+        footerPath2.fullySelected = false;
+        footerPath2.position.y = 500;
+        footerPath2.position.x = 600;
+
+        footerPath3.segments = [];
+        footerPath3.add(view.bounds.bottomLeft);
+        for (var i = 1; i < points; i++) {
+            var point = new Point(width / points * i, center.y);
+            footerPath3.add(point);
+        }
+        footerPath3.add(view.bounds.bottomRight);
+        footerPath3.fullySelected = false;
+        footerPath3.position.y = 500;
+        footerPath3.position.x = 600;
+
+
         //set up canvas 1
         paper.setup('canvas-1');
         var path = new Path();
@@ -79,66 +141,6 @@
         path3.position.y = 450;
         path3.position.x = 0;
         path3.rotate(90);
-
-        //set up canvas 2
-        paper.setup('canvas-2');
-        var footerPath = new Path();
-        var footerPath2 = new Path();
-        var footerPath3 = new Path();
-        var points = 8;
-        var width, height, center;
-
-        footerPath.fillColor = '#F3D1AD';
-        footerPath.strokeColor = '#F3D1AD';
-        footerPath.strokeWidth = 0;
-
-        footerPath2.fillColor = null;
-        footerPath2.strokeColor = '#F3D1AD';
-        footerPath2.strokeWidth = 1;
-
-        footerPath3.fillColor = null;
-        footerPath3.strokeColor = '#F3D1AD';
-        footerPath3.strokeWidth = 1;
-
-        center = view.center;
-        width = view.size.width;
-        height = view.size.height / 2;
-
-        footerPath.segments = [];
-        footerPath.add(view.bounds.bottomLeft);
-        for (var i = 1; i < points; i++) {
-            var sinSeed = (350) + (i + i % 12) * 200;
-            var sinHeight = Math.sin(sinSeed / 100) * 100;
-            var xPos = ((Math.sin(sinSeed / 100) * sinHeight + 700));
-            var point = new Point(width / points * i, xPos-400);
-            footerPath.add(point);
-        }
-        footerPath.add(view.bounds.bottomRight);
-        footerPath.fullySelected = false;
-        footerPath.position.y = 500;
-        footerPath.position.x = 600;
-
-        footerPath2.segments = [];
-        footerPath2.add(view.bounds.bottomLeft);
-        for (var i = 1; i < points; i++) {
-            var point = new Point(width / points * i, center.y);
-            footerPath2.add(point);
-        }
-        footerPath2.add(view.bounds.bottomRight);
-        footerPath2.fullySelected = false;
-        footerPath2.position.y = 500;
-        footerPath2.position.x = 600;
-
-        footerPath3.segments = [];
-        footerPath3.add(view.bounds.bottomLeft);
-        for (var i = 1; i < points; i++) {
-            var point = new Point(width / points * i, center.y);
-            footerPath3.add(point);
-        }
-        footerPath3.add(view.bounds.bottomRight);
-        footerPath3.fullySelected = false;
-        footerPath3.position.y = 500;
-        footerPath3.position.x = 600;
 
 
         view.onFrame = function(event) {            
@@ -231,7 +233,7 @@
                         </li>
                     </ul>
                     <button class="btn btn-primary">Book Services</button>
-                    <button class="btn btn-primary mx-2">Book Classes</button>
+                    <button class="btn btn-primary mx-lg-2">Book Classes</button>
                 </div>
             </div>
         </nav>

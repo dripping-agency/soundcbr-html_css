@@ -681,6 +681,14 @@ footer {
 
 }
 
+@media (max-width: 992px){
+  .navbar {
+    .btn.btn-primary{
+      margin: 10px 20px;
+    }
+  }
+}
+
 @media (min-width: 768px){
   .contact-img-banner-mobile{
     display: none;
@@ -733,6 +741,7 @@ footer {
   .services-img-banner{
     display: none;
   }
+
 }
 
 
